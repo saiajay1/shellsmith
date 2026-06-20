@@ -63,7 +63,7 @@ python eval/eval.py
 # 4. quantize -> MLX 4-bit + GGUF
 ./scripts/quantize.sh
 
-# 5. publish (needs `huggingface-cli login` first)
+# 5. publish (needs `hf auth login` first)
 HF_USER=your-username ./scripts/publish.sh
 ```
 

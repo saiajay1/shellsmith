@@ -96,6 +96,10 @@ prompt for best results.
   sandbox or confirmation step.
 - Single-command only; it does not write multi-step scripts.
 
+## Related
+Part of a series of focused "English → developer DSL" fine-tunes:
+- [Qwen2.5-Coder-7B-Querysmith](https://huggingface.co/ajayk007/Qwen2.5-Coder-7B-Querysmith) — schema-grounded text-to-SQL.
+
 ## License
 
 Apache-2.0, inheriting from the base model.

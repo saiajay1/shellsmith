@@ -73,6 +73,11 @@ HF_USER=your-username ./scripts/publish.sh
   one line in `config/lora_config.yaml`.
 - **Safety:** generated commands are not sandboxed. Read before you run.
 
+## Related
+
+Part of a series of focused **"English → developer DSL"** fine-tunes:
+- [**Querysmith**](https://github.com/saiajay1/querysmith) — schema-grounded text-to-SQL ([model](https://huggingface.co/ajayk007/Qwen2.5-Coder-7B-Querysmith))
+
 ## License
 
 Apache-2.0.

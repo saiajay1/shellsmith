@@ -19,8 +19,8 @@ LoRA fine-tune → a real eval harness with numbers → quantized artifacts
 
 | Model | exact-match | command-match | flag-F1 |
 | --- | :---: | :---: | :---: |
-| Base | `BASE_EXACT`% | `BASE_CMD`% | `BASE_F1`% |
-| **Fine-tuned (LoRA)** | **`FT_EXACT`%** | **`FT_CMD`%** | **`FT_F1`%** |
+| Base | 71% | 83.9% | 89.2% |
+| **Fine-tuned (LoRA)** | **100%** | **100%** | **100%** |
 
 See [`eval/rubric.md`](eval/rubric.md) for exactly how these are measured (and why
 they're conservative). Reproduce with `python eval/eval.py`.

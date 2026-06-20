@@ -16,7 +16,6 @@ mlx_lm.fuse \
   --model "$BASE" \
   --adapter-path adapters \
   --save-path dist/fused \
-  --hf-path "$BASE" \
   --export-gguf \
   --gguf-path nl2shell-1.5b.gguf
 

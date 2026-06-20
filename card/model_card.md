@@ -34,10 +34,19 @@ Metrics are structural (no command execution) and conservative — see the
 
 | Model | exact-match | command-match | flag-F1 |
 | --- | :---: | :---: | :---: |
-| Base (Qwen2.5-Coder-1.5B-Instruct) | `BASE_EXACT`% | `BASE_CMD`% | `BASE_F1`% |
-| **This model (LoRA)** | **`FT_EXACT`%** | **`FT_CMD`%** | **`FT_F1`%** |
+| Base (Qwen2.5-Coder-1.5B-Instruct) | 71% | 83.9% | 89.2% |
+| **This model (LoRA)** | **100%** | **100%** | **100%** |
 
 *command-match = correct program **and** option-flag F1 ≥ 0.8.*
+
+> **What the 100% means (and doesn't):** the test split holds out unseen
+> *phrasings*, but the underlying task distribution (84 canonical tasks) overlaps
+> with training. So this measures reliable **in-distribution generalization across
+> wording** — the model consistently emits the canonical, idiomatic command
+> (`git add -A`, `ls -lS`, `git log --oneline -5`) where the base model drifts to
+> looser variants (`git add .`, `ls -lh | sort -rh`, `git log -5`). It is **not**
+> evidence of generalization to entirely novel tasks; broadening the task set is
+> the obvious next step.
 
 ## Usage
 

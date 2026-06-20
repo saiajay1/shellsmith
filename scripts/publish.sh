@@ -16,8 +16,8 @@ MODEL_REPO="$HF_USER/Qwen2.5-Coder-1.5B-Shellsmith"
 DATA_REPO="$HF_USER/shellsmith-commands"
 
 echo "==> Creating repos (idempotent)"
-hf repo create "$MODEL_REPO" --repo-type model --exist-ok || true
-hf repo create "$DATA_REPO"  --repo-type dataset --exist-ok || true
+hf repos create "$MODEL_REPO" --repo-type model --exist-ok || true
+hf repos create "$DATA_REPO"  --repo-type dataset --exist-ok || true
 
 echo "==> Copying model card into the artifact folder"
 cp card/model_card.md dist/mlx-4bit/README.md

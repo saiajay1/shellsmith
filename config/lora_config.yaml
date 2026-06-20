@@ -1,0 +1,38 @@
+# mlx-lm LoRA fine-tuning config for NL -> shell command.
+# Run: mlx_lm.lora --config config/lora_config.yaml
+#
+# Base model is a small code model so iteration is fast on an M-series Mac.
+# With 48 GB unified memory you can bump this to the 3B or 7B Instruct variant
+# (just change `model` below) without changing anything else.
+
+model: "Qwen/Qwen2.5-Coder-1.5B-Instruct"
+train: true
+
+# Path to the folder containing train.jsonl / valid.jsonl / test.jsonl
+data: "data"
+
+# LoRA (not full fine-tune) — small, fast, and all we need for a focused task.
+fine_tune_type: lora
+num_layers: 16          # number of transformer layers to apply LoRA to
+
+# LoRA hyperparameters
+lora_parameters:
+  rank: 16
+  scale: 20.0
+  dropout: 0.05
+
+# Optimization
+batch_size: 4
+iters: 400              # ~6-8 epochs over 206 examples at bs=4
+learning_rate: 1.0e-4
+max_seq_length: 512     # shell commands + instructions are short
+grad_checkpoint: false
+
+# Reporting / checkpoints
+steps_per_report: 20
+steps_per_eval: 100
+val_batches: 12
+save_every: 200
+adapter_path: "adapters"
+
+seed: 1707

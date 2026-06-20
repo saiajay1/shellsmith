@@ -1,4 +1,4 @@
-# nl2shell 🐚 — English → shell command, fine-tuned on a Mac
+# Shellsmith 🔨 — English → shell command, fine-tuned on a Mac
 
 An end-to-end, reproducible project that fine-tunes a small code model to turn
 plain-English instructions into a single shell command — built entirely on
@@ -28,7 +28,7 @@ they're conservative). Reproduce with `python eval/eval.py`.
 ## Project layout
 
 ```
-nl2shell/
+shellsmith/
 ├── data/
 │   ├── build_dataset.py     # curated seeds + paraphrase aug -> train/valid/test.jsonl
 │   └── *.jsonl              # generated splits (chat format)

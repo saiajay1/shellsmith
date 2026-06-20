@@ -1,6 +1,6 @@
 ---
-title: nl2shell
-emoji: 🐚
+title: shellsmith
+emoji: 🔨
 colorFrom: indigo
 colorTo: green
 sdk: gradio
@@ -10,9 +10,9 @@ pinned: false
 license: apache-2.0
 ---
 
-# nl2shell — English → shell command
+# Shellsmith — English → shell command
 
-Live demo of [`Qwen2.5-Coder-1.5B-nl2shell`](https://huggingface.co/REPLACE_ME/Qwen2.5-Coder-1.5B-nl2shell).
+Live demo of [`Qwen2.5-Coder-1.5B-Shellsmith`](https://huggingface.co/REPLACE_ME/Qwen2.5-Coder-1.5B-Shellsmith).
 Type a task in plain English, get a single shell command back.
 
 Fine-tuned with LoRA on an Apple M5 Pro using MLX. Runs here on free CPU via the

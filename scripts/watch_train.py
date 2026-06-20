@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Live training dashboard for the nl2shell LoRA fine-tune.
+"""Live training dashboard for the shellsmith LoRA fine-tune.
 
 Launches `mlx_lm.lora` and renders a live terminal dashboard: a progress bar,
 train/val loss, throughput, peak memory, ETA, and a loss sparkline.
@@ -127,7 +127,7 @@ def render(st: State, progress: Progress, task_id):
 
     return Panel(
         Group(progress, table, spark_panel),
-        title=f"[bold]🐚 nl2shell — LoRA fine-tune[/]  [dim]{st.iter}/{st.total} iters[/]",
+        title=f"[bold]🔨 Shellsmith — LoRA fine-tune[/]  [dim]{st.iter}/{st.total} iters[/]",
         border_style="blue", padding=(1, 2),
     )
 

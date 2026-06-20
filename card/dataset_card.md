@@ -13,10 +13,10 @@ size_categories:
   - n<1K
 ---
 
-# nl2shell-commands
+# shellsmith-commands
 
 Curated **(natural-language instruction → shell command)** pairs for macOS/Linux,
-used to fine-tune [`Qwen2.5-Coder-1.5B-nl2shell`](https://huggingface.co/REPLACE_ME/Qwen2.5-Coder-1.5B-nl2shell).
+used to fine-tune [`Qwen2.5-Coder-1.5B-Shellsmith`](https://huggingface.co/REPLACE_ME/Qwen2.5-Coder-1.5B-Shellsmith).
 
 ## Format
 
@@ -46,7 +46,7 @@ disk/system, networking, git, permissions, and environment/misc.
 ## Construction
 
 One canonical command per task (so evaluation has a fair reference). See
-[`data/build_dataset.py`](https://github.com/REPLACE_ME/nl2shell/blob/main/data/build_dataset.py)
+[`data/build_dataset.py`](https://github.com/REPLACE_ME/shellsmith/blob/main/data/build_dataset.py)
 to reproduce or extend.
 
 ## License

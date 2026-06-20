@@ -12,8 +12,8 @@ source ../.venv/bin/activate 2>/dev/null || source .venv/bin/activate
 
 : "${HF_USER:?Set HF_USER to your Hugging Face username, e.g. HF_USER=ajay ./scripts/publish.sh}"
 
-MODEL_REPO="$HF_USER/Qwen2.5-Coder-1.5B-nl2shell"
-DATA_REPO="$HF_USER/nl2shell-commands"
+MODEL_REPO="$HF_USER/Qwen2.5-Coder-1.5B-Shellsmith"
+DATA_REPO="$HF_USER/shellsmith-commands"
 
 echo "==> Creating repos (idempotent)"
 huggingface-cli repo create "$MODEL_REPO" --type model -y || true
@@ -25,8 +25,8 @@ cp card/model_card.md dist/mlx-4bit/README.md
 echo "==> Uploading 4-bit MLX model + GGUF + card"
 huggingface-cli upload "$MODEL_REPO" dist/mlx-4bit . --repo-type model
 # GGUF (if you ran ./scripts/export_gguf.sh)
-if [ -f dist/nl2shell-1.5b-f16.gguf ]; then
-  huggingface-cli upload "$MODEL_REPO" dist/nl2shell-1.5b-f16.gguf nl2shell-1.5b-f16.gguf --repo-type model
+if [ -f dist/shellsmith-1.5b-f16.gguf ]; then
+  huggingface-cli upload "$MODEL_REPO" dist/shellsmith-1.5b-f16.gguf shellsmith-1.5b-f16.gguf --repo-type model
 fi
 
 echo "==> Uploading dataset (train/valid/test + card)"

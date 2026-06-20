@@ -11,7 +11,7 @@ cd "$(dirname "$0")/.."
 source ../.venv/bin/activate 2>/dev/null || source .venv/bin/activate
 
 FUSED="dist/fused"
-OUT="dist/nl2shell-1.5b-f16.gguf"
+OUT="dist/shellsmith-1.5b-f16.gguf"
 TOOLS=".tools"
 LLAMA="$TOOLS/llama.cpp"
 
@@ -47,4 +47,4 @@ echo
 echo "Optional — make a small 4-bit GGUF (needs a one-time llama.cpp build):"
 echo "    cmake -S $LLAMA -B $LLAMA/build -DCMAKE_BUILD_TYPE=Release >/dev/null"
 echo "    cmake --build $LLAMA/build --target llama-quantize -j"
-echo "    $LLAMA/build/bin/llama-quantize $OUT dist/nl2shell-1.5b-Q4_K_M.gguf Q4_K_M"
+echo "    $LLAMA/build/bin/llama-quantize $OUT dist/shellsmith-1.5b-Q4_K_M.gguf Q4_K_M"

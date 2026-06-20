@@ -1,4 +1,4 @@
-"""Gradio demo for Qwen2.5-Coder-1.5B-nl2shell.
+"""Gradio demo for Qwen2.5-Coder-1.5B-Shellsmith.
 
 Runs on a free Hugging Face Space (CPU). Loads the GGUF build via llama-cpp so
 it works without a GPU; on Mac you can also run it locally with the same file.
@@ -7,8 +7,8 @@ import gradio as gr
 from huggingface_hub import hf_hub_download
 from llama_cpp import Llama
 
-REPO = "REPLACE_ME/Qwen2.5-Coder-1.5B-nl2shell"
-GGUF = "nl2shell-1.5b-f16.gguf"
+REPO = "REPLACE_ME/Qwen2.5-Coder-1.5B-Shellsmith"
+GGUF = "shellsmith-1.5b-f16.gguf"
 
 SYSTEM = (
     "You are a shell command generator for macOS/Linux. Given a task in plain "
@@ -46,9 +46,9 @@ EXAMPLES = [
     "create and switch to a new git branch called feature",
 ]
 
-with gr.Blocks(title="nl2shell") as demo:
+with gr.Blocks(title="shellsmith") as demo:
     gr.Markdown(
-        "# 🐚 nl2shell\n"
+        "# 🔨 Shellsmith\n"
         "Plain English → a single shell command. "
         "Fine-tuned `Qwen2.5-Coder-1.5B` (LoRA, trained on an Apple M5 Pro with MLX).\n\n"
         "⚠️ **Always read a command before running it.**"

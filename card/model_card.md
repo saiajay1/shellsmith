@@ -14,7 +14,7 @@ pipeline_tag: text-generation
 library_name: mlx
 ---
 
-# Qwen2.5-Coder-1.5B-nl2shell
+# Qwen2.5-Coder-1.5B-Shellsmith
 
 A small, fast model that turns **plain-English instructions into a single shell
 command** for macOS/Linux. LoRA fine-tune of
@@ -30,7 +30,7 @@ trained and quantized end-to-end on an Apple Silicon Mac with
 
 Evaluated on a held-out test split the model never saw during training.
 Metrics are structural (no command execution) and conservative — see the
-[eval rubric](https://github.com/REPLACE_ME/nl2shell/blob/main/eval/rubric.md).
+[eval rubric](https://github.com/REPLACE_ME/shellsmith/blob/main/eval/rubric.md).
 
 | Model | exact-match | command-match | flag-F1 |
 | --- | :---: | :---: | :---: |
@@ -54,13 +54,13 @@ Metrics are structural (no command execution) and conservative — see the
 
 ```bash
 pip install mlx-lm
-mlx_lm.generate --model REPLACE_ME/Qwen2.5-Coder-1.5B-nl2shell \
+mlx_lm.generate --model REPLACE_ME/Qwen2.5-Coder-1.5B-Shellsmith \
   --prompt "compress the logs folder into logs.tar.gz"
 ```
 
 ```python
 from mlx_lm import load, generate
-model, tok = load("REPLACE_ME/Qwen2.5-Coder-1.5B-nl2shell")
+model, tok = load("REPLACE_ME/Qwen2.5-Coder-1.5B-Shellsmith")
 messages = [
     {"role": "system", "content": "You are a shell command generator for macOS/Linux. "
      "Given a task in plain English, reply with a single safe shell command. "
@@ -73,7 +73,7 @@ print(generate(model, tok, prompt=prompt, max_tokens=64))
 
 ### GGUF (llama.cpp / Ollama / LM Studio)
 
-A `nl2shell-1.5b-f16.gguf` file is included in this repo for use with llama.cpp-based runtimes.
+A `shellsmith-1.5b-f16.gguf` file is included in this repo for use with llama.cpp-based runtimes.
 
 ## Prompt format
 
@@ -84,7 +84,7 @@ prompt for best results.
 
 - **Method:** LoRA (rank 16), 16 layers, 400 iterations, batch size 4, lr 1e-4
 - **Hardware:** Apple M5 Pro (48 GB), MLX
-- **Data:** [`REPLACE_ME/nl2shell-commands`](https://huggingface.co/datasets/REPLACE_ME/nl2shell-commands) —
+- **Data:** [`REPLACE_ME/shellsmith-commands`](https://huggingface.co/datasets/REPLACE_ME/shellsmith-commands) —
   curated (instruction, command) pairs with paraphrase augmentation, 80/10/10 split.
 
 ## Limitations & safety

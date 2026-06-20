@@ -12,7 +12,7 @@ license: apache-2.0
 
 # Shellsmith — English → shell command
 
-Live demo of [`Qwen2.5-Coder-1.5B-Shellsmith`](https://huggingface.co/REPLACE_ME/Qwen2.5-Coder-1.5B-Shellsmith).
+Live demo of [`Qwen2.5-Coder-1.5B-Shellsmith`](https://huggingface.co/ajayk007/Qwen2.5-Coder-1.5B-Shellsmith).
 Type a task in plain English, get a single shell command back.
 
 Fine-tuned with LoRA on an Apple M5 Pro using MLX. Runs here on free CPU via the

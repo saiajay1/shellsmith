@@ -30,7 +30,7 @@ trained and quantized end-to-end on an Apple Silicon Mac with
 
 Evaluated on a held-out test split the model never saw during training.
 Metrics are structural (no command execution) and conservative — see the
-[eval rubric](https://github.com/REPLACE_ME/shellsmith/blob/main/eval/rubric.md).
+[eval rubric](https://github.com/saiajay1/shellsmith/blob/main/eval/rubric.md).
 
 | Model | exact-match | command-match | flag-F1 |
 | --- | :---: | :---: | :---: |
@@ -54,13 +54,13 @@ Metrics are structural (no command execution) and conservative — see the
 
 ```bash
 pip install mlx-lm
-mlx_lm.generate --model REPLACE_ME/Qwen2.5-Coder-1.5B-Shellsmith \
+mlx_lm.generate --model ajayk007/Qwen2.5-Coder-1.5B-Shellsmith \
   --prompt "compress the logs folder into logs.tar.gz"
 ```
 
 ```python
 from mlx_lm import load, generate
-model, tok = load("REPLACE_ME/Qwen2.5-Coder-1.5B-Shellsmith")
+model, tok = load("ajayk007/Qwen2.5-Coder-1.5B-Shellsmith")
 messages = [
     {"role": "system", "content": "You are a shell command generator for macOS/Linux. "
      "Given a task in plain English, reply with a single safe shell command. "
@@ -84,7 +84,7 @@ prompt for best results.
 
 - **Method:** LoRA (rank 16), 16 layers, 400 iterations, batch size 4, lr 1e-4
 - **Hardware:** Apple M5 Pro (48 GB), MLX
-- **Data:** [`REPLACE_ME/shellsmith-commands`](https://huggingface.co/datasets/REPLACE_ME/shellsmith-commands) —
+- **Data:** [`ajayk007/shellsmith-commands`](https://huggingface.co/datasets/ajayk007/shellsmith-commands) —
   curated (instruction, command) pairs with paraphrase augmentation, 80/10/10 split.
 
 ## Limitations & safety

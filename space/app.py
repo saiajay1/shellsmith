@@ -7,7 +7,7 @@ import gradio as gr
 from huggingface_hub import hf_hub_download
 from llama_cpp import Llama
 
-REPO = "REPLACE_ME/Qwen2.5-Coder-1.5B-Shellsmith"
+REPO = "ajayk007/Qwen2.5-Coder-1.5B-Shellsmith"
 GGUF = "shellsmith-1.5b-f16.gguf"
 
 SYSTEM = (

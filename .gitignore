@@ -3,5 +3,6 @@ __pycache__/
 *.pyc
 adapters/
 dist/
+.tools/
 eval/results*.json
 .DS_Store

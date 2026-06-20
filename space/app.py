@@ -8,7 +8,7 @@ from huggingface_hub import hf_hub_download
 from llama_cpp import Llama
 
 REPO = "REPLACE_ME/Qwen2.5-Coder-1.5B-nl2shell"
-GGUF = "nl2shell-1.5b.gguf"
+GGUF = "nl2shell-1.5b-f16.gguf"
 
 SYSTEM = (
     "You are a shell command generator for macOS/Linux. Given a task in plain "

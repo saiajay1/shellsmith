@@ -24,7 +24,10 @@ cp card/model_card.md dist/mlx-4bit/README.md
 
 echo "==> Uploading 4-bit MLX model + GGUF + card"
 huggingface-cli upload "$MODEL_REPO" dist/mlx-4bit . --repo-type model
-huggingface-cli upload "$MODEL_REPO" dist/fused/nl2shell-1.5b.gguf nl2shell-1.5b.gguf --repo-type model
+# GGUF (if you ran ./scripts/export_gguf.sh)
+if [ -f dist/nl2shell-1.5b-f16.gguf ]; then
+  huggingface-cli upload "$MODEL_REPO" dist/nl2shell-1.5b-f16.gguf nl2shell-1.5b-f16.gguf --repo-type model
+fi
 
 echo "==> Uploading dataset (train/valid/test + card)"
 cp card/dataset_card.md /tmp/_ds_readme.md

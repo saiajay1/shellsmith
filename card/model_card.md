@@ -73,7 +73,7 @@ print(generate(model, tok, prompt=prompt, max_tokens=64))
 
 ### GGUF (llama.cpp / Ollama / LM Studio)
 
-A `nl2shell-1.5b.gguf` file is included in this repo for use with llama.cpp-based runtimes.
+A `nl2shell-1.5b-f16.gguf` file is included in this repo for use with llama.cpp-based runtimes.
 
 ## Prompt format
 
